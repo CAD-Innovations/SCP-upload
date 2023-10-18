@@ -19,6 +19,6 @@ jobs:
          username: ${{ secrets.SSH_USERNAME }}
          # password: ${{ secrets.SSH_PASSWORD }}
          key: ${{ secrets.SSH_KEY }}
-         fingerprint: ${{ secrets.SSH_FINGERPRINT }}
+         # fingerprint: ${{ secrets.SSH_FINGERPRINT }}
          source: VersaNote-v1.10.0.msi
          target: /root/VersaNote.msi
