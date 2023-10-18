@@ -1,0 +1,24 @@
+on: 
+  push:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      
+      - name: List the tree structure before upload
+        run: ls -R
+       
+      - name: copy file via ssh password
+        uses: appleboy/scp-action@v0.1.4
+      
+        with:
+         host: ${{ secrets.SSH_HOST }}
+         username: ${{ secrets.SSH_USERNAME }}
+         password: ${{ secrets.SSH_PASSPHRASE }}
+         port: 22
+         source: VersaNote-v1.10.0.msi
+         target: /home/VersaNote.msi
