@@ -14,11 +14,10 @@ jobs:
        
       - name: copy file via ssh password
         uses: appleboy/scp-action@v0.1.4
-      
         with:
          host: ${{ secrets.SSH_HOST }}
          username: ${{ secrets.SSH_USERNAME }}
-         password: ${{ secrets.SSH_PASSPHRASE }}
+         key: ${{ secrets.SSH_PASSPHRASE }}
          port: 22
          source: VersaNote-v1.10.0.msi
          target: /home/VersaNote.msi
