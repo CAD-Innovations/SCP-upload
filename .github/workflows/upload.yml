@@ -10,8 +10,8 @@ jobs:
       - name: Checkout the repository
         uses: actions/checkout@v3
 
-      - name: Rename the file
-        run: mv VersaNote-v1.10.0.msi VersaNote.msi
+#      - name: Rename the file
+#        run: mv VersaNote-v1.10.0.msi VersaNote.msi
       
       - name: List the tree structure before upload
         run: ls -R
@@ -23,5 +23,5 @@ jobs:
          username: ${{ secrets.SSH_USERNAME }}
          key: ${{ secrets.SSH_KEY }}
          timeout: 5m
-         source: VersaNote.msi
-         target: /var/www/html/wp-content/uploads/v1.10.012
+         source: VersaNote-v1.10.0.msi
+         target: /var/www/html/wp-content/uploads/v1.10.99/VersaNote.msi
